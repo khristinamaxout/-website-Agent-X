@@ -115,6 +115,8 @@
       </div>
     </section>
 
+    <div class="brand-atmo-divider" aria-hidden="true"></div>
+
     <!-- 2. Problem -->
     <section class="section problem" id="problem">
       <div class="container problem__inner">
@@ -216,6 +218,8 @@
       </div>
     </section>
 
+    <div class="brand-atmo-divider" aria-hidden="true"></div>
+
     <!-- 4. Benefits -->
     <section class="section benefits" id="benefits">
       <div class="container">
@@ -302,6 +306,8 @@
       </div>
     </section>
 
+    <div class="brand-atmo-divider" aria-hidden="true"></div>
+
     <!-- 6. Trust -->
     <section class="section trust" id="trust">
       <div class="container trust__inner reveal">
@@ -369,32 +375,24 @@
             </div>
           </div>
         </div>
-        <form class="contact__form reveal reveal--d1" id="contactForm" action="https://formsubmit.co/agent-x@internet.ru" method="post" novalidate>
-          <input type="hidden" name="_subject" value="Новая заявка с сайта Цифровой Агент Х">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
+        <form class="contact__form reveal reveal--d1" id="contactForm" action="#" method="post" novalidate>
           <div class="form-field">
             <label for="name">Имя</label>
             <input type="text" id="name" name="name" placeholder="Как к вам обращаться" required autocomplete="name">
           </div>
           <div class="form-field">
-            <label for="phone">Телефон или Telegram</label>
-            <input type="text" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel">
+            <label for="phone">Телефон</label>
+            <input type="text" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required autocomplete="tel" inputmode="numeric">
           </div>
           <div class="form-field">
-            <label for="service">Интересует</label>
-            <select id="service" name="service" required>
-              <option value="card">Цифровая визитка нового поколения</option>
-              <option value="emenu">E-Menu</option>
-              <option value="site">Сайт</option>
-              <option value="consult">Консультация</option>
-            </select>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
           </div>
           <div class="form-field">
             <label for="message">О задаче</label>
-            <textarea id="message" name="message" placeholder="Кратко опишите бизнес и задачу" rows="4"></textarea>
+            <textarea id="message" name="message" placeholder="Кратко опишите бизнес и задачу" rows="4" required></textarea>
           </div>
-          <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+          <button type="submit" class="btn btn--primary btn--full">Оставить заявку</button>
           <p class="form-note">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
         </form>
       </div>
@@ -419,6 +417,7 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
   <script src="text-type.js" defer></script>
   <script src="border-glow.js" defer></script>
   <script src="script.js" defer></script>
