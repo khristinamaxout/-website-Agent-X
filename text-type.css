@@ -1,0 +1,46 @@
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+.text-type__cursor {
+  margin-left: 0.25rem;
+  display: inline-block;
+  opacity: 1;
+  animation: textTypeCursorBlink 0.5s ease-in-out infinite;
+}
+
+.text-type__cursor--hidden {
+  display: none;
+}
+
+@keyframes textTypeCursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-type__cursor {
+    animation: none;
+  }
+}
+
+/* Colontitle logo — text +50%, X +55% from original 17px */
+.header .logo,
+.footer__brand > .logo {
+  font-size: 25.5px;
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.header .logo .logo__x,
+.footer__brand > .logo .logo__x {
+  font-size: 26.35px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header .logo,
+  .footer__brand > .logo {
+    font-size: 25.5px;
+  }
+}

@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="border-glow.css">
+  <link rel="stylesheet" href="text-type.css">
 </head>
 <body class="page-examples">
 
@@ -17,7 +19,7 @@
 
   <header class="header header--scrolled" id="header">
     <div class="container header__inner">
-      <a href="index.html" class="logo">Цифровой Агент <span class="logo__x">Х</span></a>
+      <a href="index.html" class="logo" data-text-type='["Цифровой Агент Х","Визитки · E-Menu · Сайты","Премиальный digital"]' aria-label="Цифровой Агент Х">Цифровой Агент <span class="logo__x">Х</span></a>
       <nav class="nav nav--compact" aria-label="Навигация примеров">
         <a href="index.html" class="nav__link">← На главную</a>
         <a href="index.html#contact" class="nav__link nav__link--cta">Заказать визитку</a>
@@ -146,6 +148,8 @@
     </div>
   </footer>
 
+  <script src="text-type.js" defer></script>
+  <script src="border-glow.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>
