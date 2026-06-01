@@ -361,21 +361,18 @@
           <h2 class="section-title">Получите расчёт<br>за один шаг</h2>
           <p class="section-lead">Расскажите о задаче — предложу решение и подготовлю предложение. Без обязательств.</p>
           <div class="contact__channels">
-            <div>
-              <span class="contact__label">Telegram</span>
-              <a href="https://t.me/[ТРЕБУЕТ_УТОЧНЕНИЯ]" class="contact__value">@[ТРЕБУЕТ УТОЧНЕНИЯ]</a>
-            </div>
-            <div>
-              <span class="contact__label">Телефон</span>
-              <a href="tel:+70000000000" class="contact__value">[ТРЕБУЕТ УТОЧНЕНИЯ]</a>
-            </div>
-            <div>
-              <span class="contact__label">Email</span>
-              <a href="mailto:info@example.com" class="contact__value">[ТРЕБУЕТ УТОЧНЕНИЯ]</a>
+            <div class="contact__channel contact__channel--card">
+              <span class="contact__label">Умная визитная карта</span>
+              <a href="https://weecard.org/Khristina" class="contact__card-link" target="_blank" rel="noopener noreferrer" aria-label="Умная визитная карта — открыть на WeeCard">
+                <span class="contact__x logo__x" aria-hidden="true">Х</span>
+              </a>
             </div>
           </div>
         </div>
-        <form class="contact__form reveal reveal--d1" id="contactForm" action="#" method="post" novalidate>
+        <form class="contact__form reveal reveal--d1" id="contactForm" action="https://formsubmit.co/agent-x@internet.ru" method="post" novalidate>
+          <input type="hidden" name="_subject" value="Новая заявка с сайта Цифровой Агент Х">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
           <div class="form-field">
             <label for="name">Имя</label>
             <input type="text" id="name" name="name" placeholder="Как к вам обращаться" required autocomplete="name">

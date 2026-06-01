@@ -107,7 +107,7 @@
 
   /* --- Contact form --- */
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const fields = form.querySelectorAll('[required]');
@@ -128,15 +128,35 @@
       const existing = form.querySelector('.form-success');
       existing?.remove();
 
-      const msg = document.createElement('div');
-      msg.className = 'form-success';
-      msg.setAttribute('role', 'status');
-      msg.textContent = 'Заявка отправлена. Свяжусь с вами в течение рабочего дня.';
-      form.prepend(msg);
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
 
-      form.reset();
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
 
-      setTimeout(() => msg.remove(), 6000);
+        if (!response.ok) throw new Error('form submit failed');
+
+        const msg = document.createElement('div');
+        msg.className = 'form-success';
+        msg.setAttribute('role', 'status');
+        msg.textContent = 'Заявка отправлена. Проверьте почту agent-x@internet.ru.';
+        form.prepend(msg);
+        form.reset();
+        setTimeout(() => msg.remove(), 6000);
+      } catch (err) {
+        const msg = document.createElement('div');
+        msg.className = 'form-success form-success--error';
+        msg.setAttribute('role', 'alert');
+        msg.textContent = 'Не удалось отправить заявку. Попробуйте ещё раз.';
+        form.prepend(msg);
+        setTimeout(() => msg.remove(), 6000);
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
     });
   }
 
