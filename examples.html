@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Примеры цифровых визиток — Цифровой Агент Х. Beauty, B2B, retail, travel, HoReCa.">
+  <title>Примеры визиток — Цифровой Агент Х</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-examples">
+
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="header header--scrolled" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">Цифровой Агент <span class="logo__x">Х</span></a>
+      <nav class="nav nav--compact" aria-label="Навигация примеров">
+        <a href="index.html" class="nav__link">← На главную</a>
+        <a href="index.html#contact" class="nav__link nav__link--cta">Заказать визитку</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="examples-main">
+    <div class="container">
+      <header class="examples-hero reveal">
+        <p class="eyebrow eyebrow--cyan">Портфолио</p>
+        <h1 class="examples-hero__title">Примеры цифровых визиток</h1>
+        <p class="examples-hero__lead">Каждый проект — отдельный бренд под нишу. NFC + QR, контакты, соцсети и кнопки действия — в одном продукте.</p>
+      </header>
+
+      <div class="examples-filters reveal reveal--d1" role="tablist" aria-label="Категории">
+        <button type="button" class="examples-filter is-active" data-filter="all">Все</button>
+        <button type="button" class="examples-filter" data-filter="b2b">B2B · Эксперты</button>
+        <button type="button" class="examples-filter" data-filter="beauty">Beauty</button>
+        <button type="button" class="examples-filter" data-filter="retail">Retail</button>
+        <button type="button" class="examples-filter" data-filter="horeca">HoReCa · Travel</button>
+      </div>
+
+      <div class="examples-grid" id="examplesGrid">
+        <article class="examples-item reveal" data-category="b2b">
+          <figure class="phone phone--showcase">
+            <div class="phone__frame">
+              <div class="phone__screen">
+                <img src="images/card-agent-x.png" alt="Цифровой Агент Х" width="390" height="844" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </figure>
+          <div class="examples-item__body">
+            <span class="showcase-card__tag">B2B · Эксперт</span>
+            <h2>Цифровой Агент Х</h2>
+            <p>Премиальный тёмный стиль, золото, заказ в мессенджерах.</p>
+          </div>
+        </article>
+
+        <article class="examples-item reveal reveal--d1" data-category="beauty">
+          <figure class="phone phone--showcase">
+            <div class="phone__frame">
+              <div class="phone__screen">
+                <img src="images/card-beauty-studio.png" alt="Ателье красоты и взгляда" width="390" height="844" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </figure>
+          <div class="examples-item__body">
+            <span class="showcase-card__tag">Beauty · Салон</span>
+            <h2>Ателье красоты и взгляда</h2>
+            <p>Онлайн-запись, мастера, карты и отзывы.</p>
+          </div>
+        </article>
+
+        <article class="examples-item reveal reveal--d2" data-category="beauty">
+          <figure class="phone phone--showcase">
+            <div class="phone__frame">
+              <div class="phone__screen">
+                <img src="images/card-cosmetology-yelena.jpg" alt="Yelena Finogenova" width="390" height="844" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </figure>
+          <div class="examples-item__body">
+            <span class="showcase-card__tag">Beauty · Косметология</span>
+            <h2>Yelena Finogenova</h2>
+            <p>Luxury-стиль, QR, портфолио и быстрая связь.</p>
+          </div>
+        </article>
+
+        <article class="examples-item reveal" data-category="retail">
+          <figure class="phone phone--showcase">
+            <div class="phone__frame">
+              <div class="phone__screen">
+                <img src="images/card-flowers-butterflies.jpg" alt="Цветы и Бабочки" width="390" height="844" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </figure>
+          <div class="examples-item__body">
+            <span class="showcase-card__tag">Retail · Подарки</span>
+            <h2>Цветы и Бабочки</h2>
+            <p>Витрина, WhatsApp, соцсети — WOW-эффект.</p>
+          </div>
+        </article>
+
+        <article class="examples-item reveal reveal--d1" data-category="horeca">
+          <figure class="phone phone--showcase">
+            <div class="phone__frame">
+              <div class="phone__screen">
+                <img src="images/card-atlas-hall.jpg" alt="Atlas-Hall" width="390" height="844" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </figure>
+          <div class="examples-item__body">
+            <span class="showcase-card__tag">HoReCa · Отель</span>
+            <h2>Atlas-Hall</h2>
+            <p>Чёрно-золотой премиум, галерея, контакты.</p>
+          </div>
+        </article>
+
+        <article class="examples-item reveal reveal--d2" data-category="horeca">
+          <figure class="phone phone--showcase">
+            <div class="phone__frame">
+              <div class="phone__screen">
+                <img src="images/card-travel-elena.png" alt="Открываем Мир с Еленой" width="390" height="844" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </figure>
+          <div class="examples-item__body">
+            <span class="showcase-card__tag">Travel · Турагент</span>
+            <h2>Открываем Мир с Еленой</h2>
+            <p>24/7, соцсети, галерея направлений.</p>
+          </div>
+        </article>
+      </div>
+
+      <aside class="examples-cta reveal">
+        <p class="examples-cta__text">Хотите такую же — но под ваш бренд?</p>
+        <a href="index.html#contact" class="btn btn--primary">Получить расчёт на визитку</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer footer--mini">
+    <div class="container footer__inner">
+      <p class="footer__copy">&copy; 2026 Цифровой Агент <span class="logo__x logo__x--inline">Х</span> · <a href="index.html">Главная</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

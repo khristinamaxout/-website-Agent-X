@@ -53,8 +53,13 @@
 
         <div class="hero__grid" id="solutions">
           <a href="#card" class="solution reveal">
-            <div class="solution__visual">
-              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80" alt="" width="800" height="600" loading="eager">
+            <div class="solution__visual solution__visual--card">
+              <div class="solution__device">
+                <img src="images/hero-card.png" alt="Цифровая визитка — премиальный стиль" width="390" height="844" loading="eager" decoding="async">
+              </div>
+              <span class="solution__badge solution__badge--nfc">NFC</span>
+              <span class="solution__badge solution__badge--qr">QR</span>
+              <span class="solution__ripple" aria-hidden="true"></span>
               <span class="solution__glow solution__glow--cyan"></span>
             </div>
             <div class="solution__body">
@@ -66,8 +71,16 @@
           </a>
 
           <a href="#emenu" class="solution reveal reveal--d1">
-            <div class="solution__visual">
-              <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80" alt="" width="800" height="600" loading="eager">
+            <div class="solution__visual solution__visual--emenu">
+              <div class="solution__device">
+                <img src="images/hero-emenu.png" alt="E-Menu — цифровое меню ресторана" width="800" height="1400" loading="eager" decoding="async">
+              </div>
+              <span class="solution__badge solution__badge--qr solution__badge--emenu">QR</span>
+              <span class="solution__scan" aria-hidden="true"></span>
+              <span class="solution__order" aria-hidden="true">
+                <span class="solution__order-icon">✓</span>
+                Заказ
+              </span>
               <span class="solution__glow solution__glow--magenta"></span>
             </div>
             <div class="solution__body">
@@ -79,8 +92,14 @@
           </a>
 
           <a href="#sites" class="solution reveal reveal--d2">
-            <div class="solution__visual">
-              <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80" alt="" width="800" height="600" loading="eager">
+            <div class="solution__visual solution__visual--sites">
+              <div class="solution__device">
+                <img src="images/hero-sites.png" alt="Разработка сайтов для бизнеса" width="800" height="1200" loading="eager" decoding="async">
+              </div>
+              <div class="solution__code" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="solution__launch" aria-hidden="true">Запуск</span>
               <span class="solution__glow solution__glow--purple"></span>
             </div>
             <div class="solution__body">
@@ -127,12 +146,27 @@
             <li>Соцсети и мессенджеры</li>
             <li>Каталог услуг</li>
           </ul>
-          <a href="#contact" class="btn btn--primary">Заказать цифровую визитку</a>
+          <div class="product__actions">
+            <a href="#contact" class="btn btn--primary">Заказать цифровую визитку</a>
+            <a href="examples.html" class="btn btn--ghost">Примеры визиток →</a>
+          </div>
         </div>
-        <figure class="product__media reveal reveal--d1">
-          <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=900&q=80" alt="Деловая встреча — передача контактов" width="900" height="1100" loading="lazy">
-          <figcaption>Для экспертов, предпринимателей и B2B</figcaption>
-        </figure>
+        <div class="product__demo reveal reveal--d1">
+          <div class="nfc-scene" aria-hidden="true">
+            <div class="nfc-scene__orbit"></div>
+            <div class="nfc-scene__phone">
+              <div class="nfc-scene__screen">
+                <img src="images/card-cosmetology-yelena.jpg" alt="Визитка Yelena Finogenova" width="390" height="844" loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="nfc-scene__tag">
+              <span class="nfc-scene__pulse"></span>
+              <span class="nfc-scene__text">NFC</span>
+            </div>
+            <div class="nfc-scene__qr">QR</div>
+          </div>
+          <p class="product__phones-caption">Касание NFC или скан QR — клиент сразу на вашей странице</p>
+        </div>
       </div>
     </section>
 
@@ -152,8 +186,8 @@
           <a href="#contact" class="btn btn--magenta">Заказать E-Menu</a>
         </div>
         <figure class="product__media reveal reveal--d1">
-          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80" alt="Интерьер ресторана" width="900" height="1100" loading="lazy">
-          <figcaption>Для HoReCa</figcaption>
+          <img src="images/product-emenu.jpg" alt="Гость в ресторане заказывает меню через QR-код" width="900" height="1100" loading="lazy">
+          <figcaption>QR на столе — меню открывается за секунду</figcaption>
         </figure>
       </div>
     </section>
@@ -174,8 +208,8 @@
           <a href="#contact" class="btn btn--ghost-light">Обсудить сайт</a>
         </div>
         <figure class="product__media reveal reveal--d1">
-          <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&q=80" alt="Современный офис" width="900" height="1100" loading="lazy">
-          <figcaption>Для компаний с амбициями роста</figcaption>
+          <img src="images/hero-sites.png" alt="Разработка сайтов под ключ — дизайн, адаптив, SEO" width="900" height="1100" loading="lazy">
+          <figcaption>Сайт, который продаёт и вызывает доверие</figcaption>
         </figure>
       </div>
     </section>
@@ -208,6 +242,28 @@
             <h3>Премиальное исполнение</h3>
             <p>Типографика, логика, детали — на уровне, который ощущается как дорогой продукт.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+      <div class="container about__grid">
+        <figure class="about__portrait reveal">
+          <div class="about__portrait-glow" aria-hidden="true"></div>
+          <img src="images/portrait.png" alt="Христина Владимировна — создатель Цифровой Агент Х" width="800" height="1000" loading="lazy">
+        </figure>
+        <div class="about__content reveal reveal--d1">
+          <p class="eyebrow eyebrow--gold">Обо мне</p>
+          <h2 class="section-title">Христина Владимировна</h2>
+          <p class="about__role">Эксперт по интерактивным решениям для бизнеса</p>
+          <p class="section-lead">Создаю цифровые визитки, E-Menu и сайты — продукты, которые усиливают статус бренда и превращают первое знакомство в обращение. Каждый проект проектирую с нуля: от визуального языка до логики кнопок и интеграции NFC + QR.</p>
+          <ul class="about__points">
+            <li>Индивидуальный дизайн под вашу нишу — без шаблонов</li>
+            <li>NFC-метка и QR-код входят в каждую цифровую визитку</li>
+            <li>Прямой контакт на всех этапах — от брифа до запуска</li>
+          </ul>
+          <a href="#contact" class="btn btn--primary">Обсудить проект</a>
         </div>
       </div>
     </section>
@@ -289,7 +345,7 @@
           </details>
           <details class="faq__item">
             <summary>Есть ли кейсы и отзывы?</summary>
-            <p>[ТРЕБУЕТ УТОЧНЕНИЯ: кейсы и отзывы клиентов повысят конверсию на 20–40%]</p>
+            <p>Да — шесть реальных проектов по категориям смотрите на странице <a href="examples.html">«Примеры визиток»</a>.</p>
           </details>
         </div>
       </div>
@@ -355,6 +411,7 @@
       </div>
       <nav class="footer__nav" aria-label="Футер">
         <a href="#card">Визитки</a>
+        <a href="examples.html">Примеры визиток</a>
         <a href="#emenu">E-Menu</a>
         <a href="#sites">Сайты</a>
         <a href="#contact">Контакты</a>
