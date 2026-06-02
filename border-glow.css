@@ -154,7 +154,7 @@
 .product__media.border-glow-card,
 .product__demo.border-glow-card,
 .trust__inner.border-glow-card,
-.contact__form.border-glow-card {
+.connect__panel.border-glow-card {
   border: none;
   background: transparent;
   backdrop-filter: none;
@@ -216,11 +216,11 @@
   gap: 40px;
 }
 
-.contact__form.border-glow-card::before {
+.connect__panel.border-glow-card::before {
   display: none;
 }
 
-.contact__form.border-glow-card .border-glow-inner {
+.connect__panel.border-glow-card .border-glow-inner {
   padding: clamp(28px, 5vw, 40px);
 }
 

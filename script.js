@@ -1,6 +1,6 @@
 /**
  * Цифровой Агент Х — Main Script
- * Navigation · Scroll · Reveal · Form
+ * Navigation · Scroll · Reveal
  */
 
 (function () {
@@ -9,51 +9,6 @@
   const header = document.getElementById('header');
   const burger = document.getElementById('burger');
   const nav = document.getElementById('nav');
-  const form = document.getElementById('contactForm');
-  const phoneInput = document.getElementById('phone');
-
-  const EMAILJS_PUBLIC_KEY = 'G81QW0tIaobOo7w7n';
-  const EMAILJS_SERVICE_ID = 'service_mm5uvgv';
-  const EMAILJS_TEMPLATE_ID = 'template_zehvx8v';
-
-  if (typeof emailjs !== 'undefined') {
-    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-  }
-
-  function applyPhoneMask(value) {
-    const digits = value.replace(/\D/g, '').replace(/^7/, '').slice(0, 10);
-    let masked = '+7 (';
-    if (!digits.length) return masked;
-    masked += digits.slice(0, 3);
-    if (digits.length >= 3) masked += ') ';
-    if (digits.length > 3) masked += digits.slice(3, 6);
-    if (digits.length >= 6) masked += '-';
-    if (digits.length > 6) masked += digits.slice(6, 8);
-    if (digits.length >= 8) masked += '-';
-    if (digits.length > 8) masked += digits.slice(8, 10);
-    return masked;
-  }
-
-  function setupPhoneMask() {
-    if (!phoneInput) return;
-    if (!phoneInput.value.trim()) phoneInput.value = '+7 (';
-
-    phoneInput.addEventListener('focus', () => {
-      if (!phoneInput.value.trim()) phoneInput.value = '+7 (';
-    });
-
-    phoneInput.addEventListener('input', () => {
-      phoneInput.value = applyPhoneMask(phoneInput.value);
-    });
-
-    phoneInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Backspace' && phoneInput.selectionStart <= 4) {
-        e.preventDefault();
-      }
-    });
-  }
-
-  setupPhoneMask();
 
   /* --- Mobile menu --- */
   if (burger && nav) {
@@ -148,106 +103,6 @@
       window.scrollTo({ top, behavior: 'smooth' });
     });
   });
-
-  /* --- Contact form --- */
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const existing = form.querySelector('.form-success');
-      existing?.remove();
-
-      const requiredFields = form.querySelectorAll('[required]');
-      let valid = true;
-
-      requiredFields.forEach((field) => {
-        const wrap = field.closest('.form-field');
-        if (!field.value.trim()) {
-          valid = false;
-          wrap?.classList.add('form-field--error');
-        } else {
-          wrap?.classList.remove('form-field--error');
-        }
-      });
-
-      const emailField = document.getElementById('email');
-      const phoneField = document.getElementById('phone');
-      const phoneDigits = (phoneField?.value || '').replace(/\D/g, '');
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      if (emailField && !emailRegex.test(emailField.value.trim())) {
-        valid = false;
-        emailField.closest('.form-field')?.classList.add('form-field--error');
-      }
-
-      if (phoneField && phoneDigits.length < 11) {
-        valid = false;
-        phoneField.closest('.form-field')?.classList.add('form-field--error');
-      }
-
-      if (!valid) return;
-
-      const submitBtn = form.querySelector('button[type="submit"]');
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Отправка...';
-      }
-
-      try {
-        if (typeof emailjs === 'undefined') {
-          throw new Error('EmailJS SDK not loaded');
-        }
-
-        const name = document.getElementById('name')?.value.trim() || '';
-        const phone = phoneField?.value.trim() || '';
-        const email = emailField?.value.trim() || '';
-        const message = document.getElementById('message')?.value.trim() || '';
-
-        await emailjs.send(
-          EMAILJS_SERVICE_ID,
-          EMAILJS_TEMPLATE_ID,
-          {
-            from_name: name,
-            from_phone: phone,
-            from_email: email,
-            message,
-            user_name: name,
-            user_phone: phone,
-            user_email: email,
-            user_message: message,
-            reply_to: email,
-            telegram_contact: '@K_h_r_i_s_t_i_4_k_a',
-            smart_card_url: 'https://weecard.org/Khristina',
-            to_email: 'agent-x@internet.ru',
-          },
-          { publicKey: EMAILJS_PUBLIC_KEY }
-        );
-
-        const msg = document.createElement('div');
-        msg.className = 'form-success';
-        msg.setAttribute('role', 'status');
-        msg.textContent = 'Спасибо! Ваша заявка успешно отправлена.';
-        form.prepend(msg);
-        form.reset();
-        if (phoneField) phoneField.value = '+7 (';
-        setTimeout(() => msg.remove(), 7000);
-      } catch (err) {
-        const detail = err?.text || err?.message || String(err);
-        console.error('EmailJS send error:', detail, err);
-        const msg = document.createElement('div');
-        msg.className = 'form-success form-success--error';
-        msg.setAttribute('role', 'alert');
-        msg.textContent = 'Не удалось отправить заявку. Попробуйте снова.';
-        form.prepend(msg);
-        setTimeout(() => msg.remove(), 7000);
-      } finally {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = 'Оставить заявку';
-        }
-      }
-    });
-  }
 
   /* --- Examples page filters --- */
   const filters = document.querySelectorAll('.examples-filter');

@@ -26,7 +26,7 @@
     { selector: '.benefit', borderRadius: 20 },
     { selector: '.process__step', borderRadius: 20 },
     { selector: '.faq__item', borderRadius: 16, glowRadius: 32 },
-    { selector: '.contact__form', borderRadius: 24 },
+    { selector: '.connect__panel', borderRadius: 24 },
     { selector: '.trust__inner', borderRadius: 28 },
     { selector: '.problem__list li', borderRadius: 16, glowRadius: 28 },
     { selector: '.product__content', borderRadius: 24 },
