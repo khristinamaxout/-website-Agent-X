@@ -12,9 +12,13 @@
   const form = document.getElementById('contactForm');
   const phoneInput = document.getElementById('phone');
 
-  const EMAILJS_PUBLIC_KEY = 'PASTE_EMAILJS_PUBLIC_KEY_HERE';
-  const EMAILJS_SERVICE_ID = 'PASTE_EMAILJS_SERVICE_ID_HERE';
-  const EMAILJS_TEMPLATE_ID = 'PASTE_EMAILJS_TEMPLATE_ID_HERE';
+  const EMAILJS_PUBLIC_KEY = 'G81QW0tIaobOo7w7n';
+  const EMAILJS_SERVICE_ID = 'service_mm5uvgv';
+  const EMAILJS_TEMPLATE_ID = 'template_zehvx8v';
+
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  }
 
   function applyPhoneMask(value) {
     const digits = value.replace(/\D/g, '').replace(/^7/, '').slice(0, 10);
@@ -194,17 +198,30 @@
           throw new Error('EmailJS SDK not loaded');
         }
 
-        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+        const name = document.getElementById('name')?.value.trim() || '';
+        const phone = phoneField?.value.trim() || '';
+        const email = emailField?.value.trim() || '';
+        const message = document.getElementById('message')?.value.trim() || '';
 
-        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-          from_name: document.getElementById('name')?.value.trim() || '',
-          from_phone: phoneField?.value.trim() || '',
-          from_email: emailField?.value.trim() || '',
-          message: document.getElementById('message')?.value.trim() || '',
-          telegram_contact: '@K_h_r_i_s_t_i_4_k_a',
-          smart_card_url: 'https://weecard.org/Khristina',
-          to_email: 'agent-x@internet.ru',
-        });
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            from_name: name,
+            from_phone: phone,
+            from_email: email,
+            message,
+            user_name: name,
+            user_phone: phone,
+            user_email: email,
+            user_message: message,
+            reply_to: email,
+            telegram_contact: '@K_h_r_i_s_t_i_4_k_a',
+            smart_card_url: 'https://weecard.org/Khristina',
+            to_email: 'agent-x@internet.ru',
+          },
+          { publicKey: EMAILJS_PUBLIC_KEY }
+        );
 
         const msg = document.createElement('div');
         msg.className = 'form-success';
@@ -215,7 +232,8 @@
         if (phoneField) phoneField.value = '+7 (';
         setTimeout(() => msg.remove(), 7000);
       } catch (err) {
-        console.log('EmailJS send error:', err);
+        const detail = err?.text || err?.message || String(err);
+        console.error('EmailJS send error:', detail, err);
         const msg = document.createElement('div');
         msg.className = 'form-success form-success--error';
         msg.setAttribute('role', 'alert');
