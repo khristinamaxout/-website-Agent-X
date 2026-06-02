@@ -1,0 +1,13 @@
+{
+  "name": "website-agent-x",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "compress": "node scripts/compress-images.mjs",
+    "build:timeweb": "node scripts/build-timeweb.mjs",
+    "prepare:timeweb": "npm run compress && npm run build:timeweb"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5"
+  }
+}

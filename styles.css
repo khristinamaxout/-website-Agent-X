@@ -32,7 +32,7 @@
 
   --shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
   --glow-cyan: 0 0 48px rgba(188, 145, 88, 0.15);
-  --brand-ref-image: url("images/brand-atmosphere.png");
+  --brand-ref-image: url("images/brand-atmosphere.webp");
   --brand-atmo-blur: 12px;
   --brand-atmo-opacity: 0.92;
 

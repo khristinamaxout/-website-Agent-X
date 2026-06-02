@@ -1,0 +1,17 @@
+node_modules/
+dist/
+*.log
+*.tmp
+.DS_Store
+
+# Локальные черновики и мусор — не для деплоя
+promt.md
+SKILL.md
+Промт для Сайта Цифровой агентХ.txt
+*_WeeCard_files/
+Открываем Мир с Еленой _ WeeCard_files/
+Христина- цифровойагентХ _ WeeCard_files/
+*.avif
+021ace92-*.png
+cb05a2b7-*.png
+7192f8a7-*.avif
