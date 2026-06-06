@@ -2021,11 +2021,54 @@ main, .header, .footer { position: relative; z-index: 1; }
 
 /* Desktop */
 @media (min-width: 1024px) {
-  .benefits__grid { grid-template-columns: repeat(4, 1fr); }
-  .process__steps { grid-template-columns: repeat(4, 1fr); }
+  :root {
+    --container: 1280px;
+  }
+
+  .container {
+    padding-inline: clamp(32px, 4vw, 56px);
+  }
+
+  .hero__grid { gap: 24px; }
+
+  .problem__inner { gap: 80px; }
+
+  .product__grid { gap: clamp(48px, 5vw, 72px); }
+
+  .benefits__grid { gap: 24px; }
+
+  .process__steps { grid-template-columns: repeat(4, 1fr); gap: 28px; }
+
+  .trust__inner { gap: 48px; }
+
+  .connect__inner { max-width: none; }
+
+  .connect__panel { gap: 32px; }
+
+  .connect__hint,
+  .connect__safe-text { max-width: none; }
+
+  .faq__list { gap: 14px; }
+
+  .faq__item summary { padding: 20px 40px 20px 8px; }
+
   .showcase__grid { grid-template-columns: repeat(3, 1fr); }
   .phone--showcase .phone__frame { max-width: 280px; }
   .examples-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --container: 1360px;
+  }
+
+  .problem__inner { gap: 96px; }
+
+  .process__steps { gap: 32px; }
+
+  .trust__inner { gap: 56px; }
+
+  .connect__panel { gap: 40px; }
 }
 
 /* Examples page */
