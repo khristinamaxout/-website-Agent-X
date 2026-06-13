@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://khristinamaxout.github.io/-website-Agent-X/sitemap.xml

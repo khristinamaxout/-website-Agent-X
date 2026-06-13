@@ -7,7 +7,7 @@ const IMAGES_DIR = join(process.cwd(), 'images');
 const JOBS = [
   { in: 'hero-emenu.png', out: 'hero-emenu.webp', w: 1400, q: 82 },
   { in: 'hero-sites.png', out: 'hero-sites.webp', w: 1400, q: 82 },
-  { in: 'product-emenu.jpg', out: 'product-emenu.jpg', w: 1200, q: 82, overwrite: true },
+  { in: 'product-emenu.jpg', out: 'product-emenu.webp', w: 1200, q: 82 },
   { in: 'card-travel-elena.png', out: 'card-travel-elena.webp', w: 900, q: 80 },
   { in: 'portrait.png', out: 'portrait.webp', w: 1000, q: 82 },
   { in: 'card-cosmetology-yelena.png', out: 'card-cosmetology-yelena.webp', w: 900, q: 80 },

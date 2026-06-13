@@ -112,7 +112,11 @@
     filters.forEach((btn) => {
       btn.addEventListener('click', () => {
         const cat = btn.dataset.filter;
-        filters.forEach((b) => b.classList.toggle('is-active', b === btn));
+        filters.forEach((b) => {
+          const active = b === btn;
+          b.classList.toggle('is-active', active);
+          b.setAttribute('aria-pressed', String(active));
+        });
         items.forEach((item) => {
           const match = cat === 'all' || item.dataset.category === cat;
           item.classList.toggle('is-hidden', !match);
@@ -121,24 +125,24 @@
     });
   }
 
-  /* --- Lazy load images --- */
-  if ('loading' in HTMLImageElement.prototype) return;
-
-  const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-  if (lazyImages.length && 'IntersectionObserver' in window) {
-    const imgObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          if (img.dataset.src) {
-            img.src = img.dataset.src;
-            img.removeAttribute('data-src');
+  /* --- Lazy load fallback for older browsers --- */
+  if (!('loading' in HTMLImageElement.prototype)) {
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    if (lazyImages.length && 'IntersectionObserver' in window) {
+      const imgObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
+              img.removeAttribute('data-src');
+            }
+            imgObserver.unobserve(img);
           }
-          imgObserver.unobserve(img);
-        }
+        });
       });
-    });
 
-    lazyImages.forEach((img) => imgObserver.observe(img));
+      lazyImages.forEach((img) => imgObserver.observe(img));
+    }
   }
 })();

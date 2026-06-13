@@ -43,7 +43,9 @@ dist/
 
 ## GitHub Pages
 
-Сайт в корне репозитория совместим с GitHub Pages. После `npm run compress` картинки станут легче и там.
+Workflow `.github/workflows/deploy-pages.yml` собирает чистую папку `dist/` (`npm run prepare:timeweb`) и публикует только её — без черновиков и локального мусора из корня репозитория.
+
+Переменная `SITE_BASE_URL` в CI задаёт абсолютные URL для `sitemap.xml`, `robots.txt` и Open Graph.
 
 ## Команды
 
