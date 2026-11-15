@@ -18,7 +18,6 @@ const FILES = [
   'script.js',
   'border-glow.js',
   'text-type.js',
-  'favicon.svg',
   '.nojekyll',
 ];
 
@@ -35,14 +34,14 @@ function injectSeo(html) {
   if (!out.includes('og:image')) {
     out = out.replace(
       '</head>',
-      `  <meta property="og:image" content="${SITE_BASE_URL}/images/card-agent-x.webp">\n  <meta property="og:image:alt" content="Цифровой Агент Х — премиальные digital-решения">\n  <meta name="twitter:card" content="summary_large_image">\n  <meta name="twitter:image" content="${SITE_BASE_URL}/images/card-agent-x.webp">\n</head>`
+      `  <meta property="og:image" content="${SITE_BASE_URL}/images/logo.png">\n  <meta property="og:image:alt" content="Цифровой Агент Х">\n  <meta name="twitter:card" content="summary_large_image">\n  <meta name="twitter:image" content="${SITE_BASE_URL}/images/logo.png">\n</head>`
     );
   }
 
   if (!out.includes('rel="icon"')) {
     out = out.replace(
       '</head>',
-      '  <link rel="icon" href="favicon.svg" type="image/svg+xml">\n  <meta name="theme-color" content="#0a0d12">\n</head>'
+      '  <link rel="icon" href="images/favicon.png" type="image/png">\n  <meta name="theme-color" content="#07060b">\n</head>'
     );
   }
 
