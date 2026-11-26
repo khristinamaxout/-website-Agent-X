@@ -101,6 +101,7 @@
     catalog: 'services',
     sites: 'services',
     nfc: 'services',
+    prices: 'services',
     benefits: 'services',
     process: 'services',
     trust: 'services',
