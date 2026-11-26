@@ -33,6 +33,7 @@
     { selector: '.product__demo', borderRadius: 24 },
     { selector: '.about__content', borderRadius: 24 },
     { selector: '.examples-item', borderRadius: 20 },
+    { selector: '.case', borderRadius: 22 },
   ];
 
   function parseHSL(hslStr) {

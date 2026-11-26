@@ -3,119 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Примеры цифровых визиток — Цифровой Агент Х. Beauty, B2B, retail, travel, HoReCa.">
-  <meta property="og:title" content="Примеры визиток — Цифровой Агент Х">
-  <meta property="og:description" content="Шесть реальных проектов цифровых визиток по категориям: beauty, B2B, retail, HoReCa и travel.">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ru_RU">
-  <meta property="og:image" content="https://khristinamaxout.github.io/-website-Agent-X/images/logo.png">
+  <meta name="description" content="Проекты Цифрового Агента Х открываются на главной, во вкладке «Проекты».">
+  <meta http-equiv="refresh" content="0; url=index.html#work">
+  <title>Проекты — Цифровой Агент Х</title>
   <link rel="icon" href="images/favicon.png" type="image/png">
   <meta name="theme-color" content="#07060b">
-  <title>Примеры визиток — Цифровой Агент Х</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="border-glow.css">
+  <link rel="stylesheet" href="styles.css?v=20261126a">
 </head>
 <body class="page-examples">
-
-  <div class="ambient" aria-hidden="true"></div>
-  <div class="grain" aria-hidden="true"></div>
-
   <header class="header header--scrolled" id="header">
     <div class="container header__inner">
-      <a href="index.html" class="logo" aria-label="Цифровой Агент Х"><img src="images/logo.png" alt="" width="436" height="372"></a>
-      <nav class="nav nav--compact" aria-label="Навигация примеров">
-        <a href="index.html" class="nav__link">← На главную</a>
-        <a href="index.html#connect" class="nav__link nav__link--cta">Связаться</a>
+      <a href="index.html" class="logo" aria-label="Цифровой Агент Х"><img class="logo__icon" src="images/logo-icon.png" alt=""><span class="logo__wordline"><img class="logo__word" src="images/logo-word.png" alt="Цифровой агент"><span class="logo__x-spin"><img src="images/logo-x.png" alt="Х"></span></span></a>
+      <nav class="sitetabs" aria-label="Разделы сайта">
+        <a class="sitetabs__link" href="index.html">Главная</a>
+        <a class="sitetabs__link" href="index.html#card">Услуги</a>
+        <a class="sitetabs__link is-active" href="index.html#work">Проекты</a>
+        <a class="sitetabs__link" href="index.html#faq">Вопросы</a>
+        <a class="sitetabs__link" href="index.html#connect">Связь</a>
       </nav>
     </div>
   </header>
-
   <main class="examples-main">
     <div class="container">
-      <header class="examples-hero reveal">
-        <p class="eyebrow eyebrow--cyan">Портфолио</p>
-        <h1 class="examples-hero__title">Примеры цифровых визиток</h1>
-        <p class="examples-hero__lead">Каждый проект — отдельный бренд под нишу. NFC + QR, контакты, соцсети и кнопки действия — в одном продукте.</p>
+      <header class="examples-hero">
+        <h1 class="examples-hero__title">Проекты на главной</h1>
+        <p class="examples-hero__lead">Список живых работ открывается во вкладке «Проекты». Там же категории: стоматология, одежда, авто, цветы, салон красоты и другие.</p>
+        <a class="btn btn--primary" href="index.html#work">Открыть проекты</a>
       </header>
-
-      <div class="examples-filters reveal reveal--d1" role="tablist" aria-label="Категории">
-        <button type="button" class="examples-filter is-active" data-filter="all" aria-pressed="true">Все</button>
-        <button type="button" class="examples-filter" data-filter="b2b" aria-pressed="false">B2B · Эксперты</button>
-        <button type="button" class="examples-filter" data-filter="beauty" aria-pressed="false">Beauty</button>
-        <button type="button" class="examples-filter" data-filter="retail" aria-pressed="false">Retail</button>
-        <button type="button" class="examples-filter" data-filter="horeca" aria-pressed="false">HoReCa · Travel</button>
-      </div>
-
-      <div class="examples-grid" id="examplesGrid">
-        <article class="examples-item reveal" data-category="b2b">
-          <div class="examples-item__body">
-            <span class="showcase-card__tag">B2B · Эксперт</span>
-            <h2>Цифровой Агент Х</h2>
-            <p>Премиальный тёмный стиль, золото, заказ в мессенджерах.</p>
-          </div>
-        </article>
-
-        <article class="examples-item reveal reveal--d1" data-category="beauty">
-          <div class="examples-item__body">
-            <span class="showcase-card__tag">Beauty · Салон</span>
-            <h2>Ателье красоты и взгляда</h2>
-            <p>Онлайн-запись, мастера, карты и отзывы.</p>
-          </div>
-        </article>
-
-        <article class="examples-item reveal reveal--d2" data-category="beauty">
-          <div class="examples-item__body">
-            <span class="showcase-card__tag">Beauty · Косметология</span>
-            <h2>Yelena Finogenova</h2>
-            <p>Luxury-стиль, QR, портфолио и быстрая связь.</p>
-          </div>
-        </article>
-
-        <article class="examples-item reveal" data-category="retail">
-          <div class="examples-item__body">
-            <span class="showcase-card__tag">Retail · Подарки</span>
-            <h2>Цветы и Бабочки</h2>
-            <p>Витрина, WhatsApp, соцсети — WOW-эффект.</p>
-          </div>
-        </article>
-
-        <article class="examples-item reveal reveal--d1" data-category="horeca">
-          <div class="examples-item__body">
-            <span class="showcase-card__tag">HoReCa · Отель</span>
-            <h2>Atlas-Hall</h2>
-            <p>Чёрно-золотой премиум, галерея, контакты.</p>
-          </div>
-        </article>
-
-        <article class="examples-item reveal reveal--d2" data-category="horeca">
-          <div class="examples-item__body">
-            <span class="showcase-card__tag">Travel · Турагент</span>
-            <h2>Открываем Мир с Еленой</h2>
-            <p>24/7, соцсети, галерея направлений.</p>
-          </div>
-        </article>
-      </div>
-
-      <aside class="examples-cta reveal">
-        <p class="examples-cta__text">Хотите такую же — но под ваш бренд? Свяжитесь через умную визитную карту или посмотрите примеры ниже.</p>
-        <div class="examples-cta__actions">
-          <a href="https://weecard.org/Khristina" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Умная визитная карта</a>
-          <a href="index.html#connect" class="btn btn--ghost">Как связаться →</a>
-        </div>
-      </aside>
     </div>
   </main>
-
-  <footer class="footer footer--mini">
-    <div class="container footer__inner">
-      <p class="footer__copy">&copy; 2026 Цифровой Агент <span class="logo__x logo__x--inline">Х</span> · <a href="index.html">Главная</a> · <a href="privacy.html">Политика</a> · <a href="offer.html">Оферта</a></p>
-    </div>
-  </footer>
-
-  <script src="border-glow.js" defer></script>
-  <script src="script.js" defer></script>
 </body>
 </html>

@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261126a">
   <link rel="stylesheet" href="border-glow.css">
 </head>
 <body>
@@ -28,23 +28,19 @@
 
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="#hero" class="logo" aria-label="Цифровой Агент Х"><img src="images/logo.png" alt="" width="436" height="372"></a>
-      <nav class="nav" id="nav" aria-label="Основная навигация">
-        <a href="#card" class="nav__link">Визитки</a>
-        <a href="#emenu" class="nav__link">E-Menu</a>
-        <a href="#catalog" class="nav__link">Каталоги</a>
-        <a href="#sites" class="nav__link">Сайты</a>
-        <a href="#process" class="nav__link">Процесс</a>
-        <a href="#faq" class="nav__link">FAQ</a>
-        <a href="#connect" class="nav__link nav__link--cta">Связаться</a>
+      <a href="#hero" class="logo" data-tab="home" aria-label="Цифровой Агент Х"><img class="logo__icon" src="images/logo-icon.png" alt=""><span class="logo__wordline"><img class="logo__word" src="images/logo-word.png" alt="Цифровой агент"><span class="logo__x-spin"><img src="images/logo-x.png" alt="Х"></span></span></a>
+      <nav class="sitetabs" id="sitetabs" aria-label="Разделы сайта">
+        <button type="button" class="sitetabs__btn is-active" data-tab="home">Главная</button>
+        <button type="button" class="sitetabs__btn" data-tab="services">Услуги</button>
+        <button type="button" class="sitetabs__btn" data-tab="projects">Проекты</button>
+        <button type="button" class="sitetabs__btn" data-tab="faq">Вопросы</button>
+        <button type="button" class="sitetabs__btn sitetabs__btn--cta" data-tab="contact">Связь</button>
       </nav>
-      <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
-        <span></span><span></span><span></span>
-      </button>
     </div>
   </header>
 
   <main>
+    <div class="panel is-on" data-panel="home" id="panel-home">
 
     <!-- 1. Hero -->
     <section class="hero section" id="hero">
@@ -53,38 +49,72 @@
           <div class="about__portrait-glow" aria-hidden="true"></div>
           <img src="images/portrait.webp" alt="Христина Владимировна Финогенова — создатель Цифровой Агент Х" width="544" height="703">
         </figure>
-        <div class="hero__copy reveal reveal--d1">
-          <p class="eyebrow eyebrow--gold">Цифровой Агент <span class="logo__x logo__x--inline">Х</span></p>
+        <div class="hero__identity reveal reveal--d1">
           <h1 class="hero__title">Христина Владимировна Финогенова</h1>
-          <p class="about__role">Собираю цифровые касания, после которых вас не забывают</p>
-          <p class="hero__lead">Делаю визитки, меню, каталоги и сайты — живые продукты, а не файлы, которые теряются. Каждый собираю с нуля: визуальный язык, логика кнопок, QR и NFC-метка, которая открывает нужный продукт одним касанием.</p>
-          <ul class="about__points">
-            <li>Индивидуальный дизайн под вашу нишу — без шаблонов</li>
-            <li>QR есть в визитке, меню и каталоге</li>
-            <li>На NFC-метку записывается визитка, меню или каталог</li>
-            <li>Прямой контакт на всех этапах — от брифа до запуска</li>
-          </ul>
+          <p class="about__role">ИИ-инженер цифровых продуктов</p>
+        </div>
+        <div class="hero__copy reveal reveal--d1">
+          <p class="hero__lead">После встречи о вас вспоминают. Не о бумажке в кармане — о странице, которая осталась в телефоне.</p>
           <div class="hero__actions">
             <a href="#connect" class="btn btn--primary">Связаться</a>
-            <a href="#solutions" class="btn btn--ghost">Смотреть решения</a>
+            <a href="#work" class="btn btn--ghost">Смотреть проекты</a>
+          </div>
+          <div class="hero__links">
+            <a class="hero__card-link" href="#faq">Частые вопросы</a>
+            <a class="hero__card-link" href="https://slmcards.ru/agent-x" target="_blank" rel="noopener noreferrer">Открыть визитку →</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section problem" id="problem">
-      <div class="container problem__inner">
-        <div class="problem__content reveal">
-          <p class="eyebrow eyebrow--cyan">Проблема</p>
-          <h2 class="section-title">Клиент решает за&nbsp;3&nbsp;секунды — доверять вам или нет</h2>
-          <p class="section-lead">Бумажная визитка теряется. PDF-меню и каталог в переписке раздражают. Устаревший сайт отталкивает. Каждая точка контакта либо усиливает статус, либо его разрушает.</p>
+    <section class="section play" id="play">
+      <div class="container">
+        <div class="play__head reveal">
+          <p class="eyebrow eyebrow--gold">Минута на себе</p>
+          <h2 class="section-title">Представьте, что это уже ваше</h2>
+          <p class="section-lead">Выберите, что происходит у вас сейчас. Ответ откроется сразу под этой карточкой.</p>
         </div>
-        <ul class="problem__list reveal reveal--d1">
-          <li><strong>Контакты не сохраняют</strong> — клиент забывает, кто вы, через час после встречи</li>
-          <li><strong>Образ устарел</strong> — конкуренты выглядят современнее при том же продукте</li>
-          <li><strong>Нет пути к действию</strong> — человек заинтересовался, но не знает, как связаться</li>
-          <li><strong>Данные неактуальны</strong> — перепечатка, правки, потерянное время</li>
-        </ul>
+        <div class="play__list" id="playList">
+          <div class="play__item" data-role="card">
+            <button type="button" class="play__role" data-role="card" aria-expanded="false">
+              <span class="play__role-kicker">01</span>
+              <span class="play__role-title">Владелец визитки</span>
+              <span class="play__role-text">После встречи в кармане остаётся бумага.</span>
+            </button>
+          </div>
+          <div class="play__item" data-role="menu">
+            <button type="button" class="play__role" data-role="menu" aria-expanded="false">
+              <span class="play__role-kicker">02</span>
+              <span class="play__role-title">Владелец меню</span>
+              <span class="play__role-text">Гость ждёт, когда на него посмотрят.</span>
+            </button>
+          </div>
+          <div class="play__item" data-role="catalog">
+            <button type="button" class="play__role" data-role="catalog" aria-expanded="false">
+              <span class="play__role-kicker">03</span>
+              <span class="play__role-title">Владелец каталога</span>
+              <span class="play__role-text">Ассортимент живёт в переписке.</span>
+            </button>
+          </div>
+          <div class="play__stage" id="playStage" hidden>
+            <div class="play__screen">
+              <img class="play__shot" id="playShot" alt="" width="960" height="540">
+              <p class="play__kicker" id="playKicker"></p>
+              <p class="play__line" id="playLine" aria-live="polite"></p>
+              <p class="play__aside" id="playAside"></p>
+            </div>
+            <div class="play__choices" id="playChoices">
+              <button type="button" class="play__choice play__choice--stay" data-path="stay">И так сойдёт</button>
+              <button type="button" class="play__choice play__choice--fix" data-path="fix">Упростить для гостя</button>
+              <button type="button" class="play__choice play__choice--have" data-path="have">У меня уже есть</button>
+            </div>
+            <div class="play__nav" id="playNav" hidden>
+              <button type="button" class="btn btn--ghost" id="playBack">Другой ответ</button>
+              <button type="button" class="btn btn--primary" id="playAnyway" hidden>Всё-таки упростить</button>
+              <a class="btn btn--primary" id="playMore" href="#card">Смотреть визитки</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -92,8 +122,8 @@
       <div class="container">
         <div class="solutions__head reveal">
           <p class="eyebrow eyebrow--cyan">Что я делаю</p>
-          <h2 class="section-title">Четыре решения для первого касания</h2>
-          <p class="section-lead">Визитка, меню, каталог и сайт. QR — там, где удобно сканировать. NFC-метка — когда достаточно одного касания.</p>
+          <h2 class="section-title">Четыре способа остаться в памяти</h2>
+          <p class="section-lead">Визитку, меню и каталог гость сохраняет на экран телефона. Страница открывается с иконки, как приложение.</p>
         </div>
         <div class="hero__grid">
           <a href="#card" class="solution reveal">
@@ -103,7 +133,7 @@
             </div>
             <div class="solution__body">
               <h2 class="solution__title">Цифровые визитки</h2>
-              <p class="solution__text">Первое впечатление, которое запоминают — на встрече, в мессенджере, одним касанием.</p>
+              <p class="solution__text">Имя остаётся после рукопожатия.</p>
               <span class="solution__link">Подробнее →</span>
             </div>
           </a>
@@ -115,7 +145,7 @@
             </div>
             <div class="solution__body">
               <h2 class="solution__title">E-Menu</h2>
-              <p class="solution__text">Меню как часть атмосферы заведения — актуальное, без печати буклетов.</p>
+              <p class="solution__text">Гость выбирает блюдо. Папку не листает.</p>
               <span class="solution__link solution__link--magenta">Подробнее →</span>
             </div>
           </a>
@@ -127,7 +157,7 @@
             </div>
             <div class="solution__body">
               <h2 class="solution__title">Электронные каталоги</h2>
-              <p class="solution__text">Ассортимент в телефоне — с фото, ценами и разделами. Без PDF и перепечатки буклетов.</p>
+              <p class="solution__text">Коллекция в руке, не файлом в чате.</p>
               <span class="solution__link solution__link--silver">Подробнее →</span>
             </div>
           </a>
@@ -139,7 +169,7 @@
             </div>
             <div class="solution__body">
               <h2 class="solution__title">Сайты</h2>
-              <p class="solution__text">Цифровая витрина — когда нужен масштаб и полноценное представление компании.</p>
+              <p class="solution__text">Когда о компании нужно рассказать целиком.</p>
               <span class="solution__link solution__link--silver">Подробнее →</span>
             </div>
           </a>
@@ -147,32 +177,173 @@
       </div>
     </section>
 
+    </div>
+    <div class="panel" data-panel="projects" id="panel-projects">
+    <section class="section work" id="work" data-filter-group>
+      <div class="container">
+        <div class="work__head reveal">
+          <p class="eyebrow eyebrow--gold">Готовые проекты</p>
+          <h2 class="section-title">Живые работы</h2>
+        </div>
+
+        <div class="work__group" data-feature="show">
+          <div class="work__grid work__grid--show">
+            <a class="case case--portrait reveal" href="https://slmcards.ru/uab94wwg2" target="_blank" rel="noopener noreferrer" data-feature="show">
+              <figure class="case__media">
+                <img src="images/case-familia.webp" alt="Murat Ramanli, агент по недвижимости Familia" width="226" height="301" loading="lazy">
+              </figure>
+              <div class="case__body">
+                <span class="showcase-card__tag">Визитка агента по недвижимости</span>
+                <h3>Familia Real Estate</h3>
+                <p>Страница агента в Анталье: квартиры, виллы и земля, и способ связаться сразу.</p>
+                <span class="case__open">Открыть проект →</span>
+              </div>
+            </a>
+            <a class="case reveal" href="https://slmcards.ru/jbpx4w29t" target="_blank" rel="noopener noreferrer" data-feature="show">
+              <figure class="case__media">
+                <img src="images/case-caviar.webp" alt="Икра и рыба в каталоге Смайлович" width="900" height="720" loading="lazy">
+              </figure>
+              <div class="case__body">
+                <span class="showcase-card__tag">Каталог</span>
+                <h3>Смайлович</h3>
+                <p>Ассортимент икры и рыбы листается с телефона: фото и разделы вместо файла в чате.</p>
+                <span class="case__open">Открыть проект →</span>
+              </div>
+            </a>
+            <a class="case reveal" href="https://ais-pre-ucutl3qxlqgfabmq7y43e3-773435659232.europe-west2.run.app/?p=petg7lpjd" target="_blank" rel="noopener noreferrer" data-feature="show">
+              <figure class="case__media">
+                <img src="images/case-tesla.webp" alt="Зал Lounge Cafe Tesla" width="900" height="900" loading="lazy">
+              </figure>
+              <div class="case__body">
+                <span class="showcase-card__tag">Е-меню</span>
+                <h3>Lounge Cafe Tesla</h3>
+                <p>Меню лаунж-кафе для зала: кабины, караоке, веранда и купола открываются с телефона за столом.</p>
+                <span class="case__open">Открыть проект →</span>
+              </div>
+            </a>
+            <a class="case reveal" href="https://krona-studio-mebel.ru/" target="_blank" rel="noopener noreferrer" data-feature="show">
+              <figure class="case__media">
+                <img src="images/case-krona-site.webp" alt="Кухня на заказ — сайт мебельной студии КРОНА" width="1200" height="630" loading="lazy">
+              </figure>
+              <div class="case__body">
+                <span class="showcase-card__tag">Сайт</span>
+                <h3>КРОНА — сайт студии</h3>
+                <p>Уже не визитка, а сайт студии: кухни, шкафы и заявка. Тот же заказчик, другой масштаб.</p>
+                <span class="case__open">Открыть проект →</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <p class="section-lead work__cats-title">Категории визитных карт</p>
+        <div class="examples-filters work-filters" role="tablist" aria-label="Категории визитных карт">
+          <button type="button" class="examples-filter" data-filter="dental" aria-pressed="false">Стоматология</button>
+          <button type="button" class="examples-filter" data-filter="flowers" aria-pressed="false">Цветы</button>
+          <button type="button" class="examples-filter" data-filter="beauty" aria-pressed="false">Салон красоты</button>
+          <button type="button" class="examples-filter" data-filter="auto" aria-pressed="false">Авто</button>
+          <button type="button" class="examples-filter" data-filter="interior" aria-pressed="false">Интерьер</button>
+          <button type="button" class="examples-filter" data-filter="clothes" aria-pressed="false">Одежда</button>
+          <button type="button" class="examples-filter" data-filter="lawyer" aria-pressed="false">Юрист</button>
+          <button type="button" class="examples-filter" data-filter="perfume" aria-pressed="false">Косметика и парфюмерия</button>
+          <button type="button" class="examples-filter" data-filter="more" aria-pressed="false">Разное</button>
+        </div>
+
+        <div class="work__group" id="workCats" hidden>
+          <div class="work__grid work__grid--more">
+            <a class="case case--portrait reveal is-hidden" href="https://slmcards.ru/kurban" target="_blank" rel="noopener noreferrer" data-cat="dental">
+              <figure class="case__media"><img src="images/case-kurban.webp" alt="Стоматолог-хирург Мазанаев Курбан Набиевич" width="403" height="403" loading="lazy"></figure>
+              <div class="case__body"><span class="showcase-card__tag">Стоматология</span><h3>Курбан Мазанаев</h3><p>Стоматолог-хирург и имплантолог в Воронеже. Пациент видит врача и записывается с одной страницы.</p><span class="case__open">Открыть проект →</span></div>
+            </a>
+            <a class="case case--logo reveal is-hidden" href="https://slmcards.ru/kamil-asadulaevich" target="_blank" rel="noopener noreferrer" data-cat="dental">
+              <figure class="case__media"><img src="images/case-kamil-asadulaevich.webp" alt="Логотип стоматолога Камиля Асадулаевича" width="512" height="512" loading="lazy"></figure>
+              <div class="case__body"><span class="showcase-card__tag">Стоматология</span><h3>Камиль Асадулаевич</h3><p>Стоматолог в Махачкале. На странице стаж, услуги и прайс — пациенту не нужно спрашивать это в чате.</p><span class="case__open">Открыть проект →</span></div>
+            </a>
+            <a class="case case--portrait reveal is-hidden" href="https://slmcards.ru/alinadiurmenova" target="_blank" rel="noopener noreferrer" data-cat="dental">
+              <figure class="case__media"><img src="images/case-alina.webp" alt="Алина Дюрменова, хирургическая стоматология" width="512" height="512" loading="lazy"></figure>
+              <div class="case__body"><span class="showcase-card__tag">Стоматология</span><h3>Алина Дюрменова</h3><p>Хирург-стоматолог. На странице консультация, лечение и запись.</p><span class="case__open">Открыть проект →</span></div>
+            </a>
+            <a class="case reveal is-hidden" href="https://slmcards.ru/velvetflowers" target="_blank" rel="noopener noreferrer" data-cat="flowers">
+              <figure class="case__media"><img src="images/case-velvet.webp" alt="Фасад цветочной мастерской и кофейни Velvet Flowers" width="512" height="288" loading="lazy"></figure>
+              <div class="case__body"><span class="showcase-card__tag">Цветы</span><h3>Velvet Flowers</h3><p>Страница мастерской и кофейни: гость видит место, сохраняет контакт и пишет, не ища бумажку в кармане.</p><span class="case__open">Открыть проект →</span></div>
+            </a>
+            <a class="case reveal is-hidden" href="https://slmcards.ru/gb2lec8ib" target="_blank" rel="noopener noreferrer" data-cat="beauty">
+              <figure class="case__media"><img src="images/case-nails.webp" alt="Маникюр — работа мастера Софьи Ударцевой" width="512" height="373" loading="lazy"></figure>
+              <div class="case__body"><span class="showcase-card__tag">Салон красоты</span><h3>Софья Ударцева</h3><p>Услуги, фото работ и запись собраны на одной странице, а не по чатам.</p><span class="case__open">Открыть проект →</span></div>
+            </a>
+            <a class="case case--logo reveal is-hidden" href="https://slmcards.ru/sofiya" target="_blank" rel="noopener noreferrer" data-cat="beauty">
+              <figure class="case__media"><img src="images/case-sofiya.webp" alt="Логотип центра профессионального ухода София" width="512" height="341" loading="lazy"></figure>
+              <div class="case__body"><span class="showcase-card__tag">Салон красоты</span><h3>София</h3><p>Центр профессионального ухода. Страница знакомит с местом и оставляет прямой способ связаться.</p><span class="case__open">Открыть проект →</span></div>
+            </a>
+            <a class="case case--logo reveal is-hidden" href="https://slmcards.ru/belmed" target="_blank" rel="noopener noreferrer" data-cat="beauty">
+              <figure class="case__media"><img src="images/case-belmed.webp" alt="Логотип салона красоты Белый медведь" width="512" height="512" loading="lazy"></figure>
+              <div class="case__body"><span class="showcase-card__tag">Салон красоты</span><h3>Белый медведь</h3><p>SPA и хаммам. Гость понимает, что это за место, и переходит к записи без бумажного флаера.</p><span class="case__open">Открыть проект →</span></div>
+            </a>
+            <a class="case case--logo reveal is-hidden" href="https://slmcards.ru/roomcar" target="_blank" rel="noopener noreferrer" data-cat="auto">
+              <figure class="case__media"><img src="images/case-roomcar.webp" alt="Логотип Roomcar" width="512" height="512" loading="lazy"></figure>
+              <div class="case__body"><span class="showcase-card__tag">Авто</span><h3>Roomcar</h3><p>Страница для автомобильного сервиса: чем занимается место и как записаться, без объяснений в переписке.</p><span class="case__open">Открыть проект →</span></div>
+            </a>
+            <a class="case case--logo reveal is-hidden" href="https://slmcards.ru/detailplast" target="_blank" rel="noopener noreferrer" data-cat="auto">
+              <figure class="case__media"><img src="images/case-detailplast.webp?v=20261126a" alt="Логотип Details Plast — детали из стеклопластика" width="512" height="512" loading="lazy"></figure>
+              <div class="case__body"><span class="showcase-card__tag">Авто</span><h3>Details Plast</h3><p>Пластиковые детали для грузовиков. Визитка коротко объясняет производство и оставляет контакт закупщику.</p><span class="case__open">Открыть проект →</span></div>
+            </a>
+            <a class="case case--logo reveal is-hidden" href="https://slmcards.ru/krona-studio-mebel" target="_blank" rel="noopener noreferrer" data-cat="interior">
+              <figure class="case__media"><img src="images/case-krona.webp" alt="Логотип мебельной студии КРОНА" width="512" height="512" loading="lazy"></figure>
+              <div class="case__body"><span class="showcase-card__tag">Интерьер</span><h3>КРОНА</h3><p>Визитка студии Елены Трифан. Человек понимает, чем занимается мастерская, ещё до сайта.</p><span class="case__open">Открыть проект →</span></div>
+            </a>
+            <a class="case reveal is-hidden" href="https://slmcards.ru/zha7vj0rt" target="_blank" rel="noopener noreferrer" data-cat="interior">
+              <figure class="case__media"><img src="images/case-zha7vj0rt.webp" alt="Ткань салона штор Валин-текс" width="410" height="512" loading="lazy"></figure>
+              <div class="case__body"><span class="showcase-card__tag">Интерьер</span><h3>Валин-текс</h3><p>Салон штор, опт и розница. Вместо прайса в мессенджере — страница, которую можно отправить клиенту.</p><span class="case__open">Открыть проект →</span></div>
+            </a>
+            <a class="case case--logo reveal is-hidden" href="https://slmcards.ru/jss0ruvas" target="_blank" rel="noopener noreferrer" data-cat="clothes">
+              <figure class="case__media"><img src="images/case-jss0ruvas.webp" alt="Логотип мехового бутика Ramazan" width="512" height="512" loading="lazy"></figure>
+              <div class="case__body"><span class="showcase-card__tag">Одежда</span><h3>Ramazan</h3><p>Меховой бутик: каракулевые шапки и жилеты. Визитка показывает уровень изделия до визита в магазин.</p><span class="case__open">Открыть проект →</span></div>
+            </a>
+            <a class="case case--portrait reveal is-hidden" href="https://slmcards.ru/tpz2fo1cp" target="_blank" rel="noopener noreferrer" data-cat="lawyer">
+              <figure class="case__media"><img src="images/case-mustafina.webp" alt="Кристина Мустафина, юрист" width="512" height="512" loading="lazy"></figure>
+              <div class="case__body"><span class="showcase-card__tag">Юрист</span><h3>Кристина Мустафина</h3><p>Страница юриста: с каким вопросом прийти и как записаться на разговор.</p><span class="case__open">Открыть проект →</span></div>
+            </a>
+            <a class="case case--logo reveal is-hidden" href="https://slmcards.ru/as-parfum" target="_blank" rel="noopener noreferrer" data-cat="perfume">
+              <figure class="case__media"><img src="images/case-as-parfum.webp" alt="Логотип AS Parfum" width="512" height="512" loading="lazy"></figure>
+              <div class="case__body"><span class="showcase-card__tag">Косметика и парфюмерия</span><h3>AS Parfum</h3><p>Парфюмерия для себя и в подарок. Страница заменяет полку в переписке: ароматы и способ заказать.</p><span class="case__open">Открыть проект →</span></div>
+            </a>
+            <a class="case reveal is-hidden" href="https://slmcards.ru/rashid" target="_blank" rel="noopener noreferrer" data-cat="more">
+              <figure class="case__media"><img src="images/case-rashid.webp" alt="Рашид Таждинов, актёр и каскадёр" width="512" height="512" loading="lazy"></figure>
+              <div class="case__body"><span class="showcase-card__tag">Разное</span><h3>Рашид Таждинов</h3><p>Актёр и каскадёр. Страница заменяет устное «вот мой контакт» после съёмки или встречи.</p><span class="case__open">Открыть проект →</span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    </div>
+    <div class="panel" data-panel="services" id="panel-services">
     <!-- 3. Solutions -->
     <section class="product section" id="card">
       <div class="container product__grid">
         <div class="product__content reveal">
           <p class="eyebrow eyebrow--cyan">Решение 01</p>
-          <h2 class="section-title">Цифровая визитка нового поколения</h2>
-          <p class="product__result">Один продукт — полный набор: NFC, QR, персональная страница, контакты, соцсети и список услуг.</p>
-          <p class="section-lead">Вы не покупаете «карточку» отдельно от «QR-кода». Вы получаете единую систему первого впечатления — для встреч, мессенджеров и нетворкинга.</p>
+          <h2 class="section-title">Цифровая визитка</h2>
+          <p class="product__result">После рукопожатия гость уносит не бумагу, а вас — на экране телефона.</p>
           <ul class="feature-list">
-            <li>NFC-метка — визитка с одного касания</li>
-            <li>QR-код для тех, кто привык сканировать</li>
-            <li>Персональная страница</li>
-            <li>Контакты и быстрая связь</li>
-            <li>Соцсети и мессенджеры</li>
-            <li>Список услуг на странице</li>
+            <li>Касание NFC или скан QR</li>
+            <li>Имя, контакты, услуги, мессенджеры</li>
+            <li>Правки без новой печати</li>
+            <li>Сохраняется на экран и открывается как приложение</li>
           </ul>
           <div class="product__actions">
             <a href="#connect" class="btn btn--primary">Заказать цифровую визитку</a>
-            <a href="examples.html" class="btn btn--ghost">Примеры визиток →</a>
+            <a href="#work" class="btn btn--ghost">Примеры визиток →</a>
           </div>
         </div>
         <div class="product__demo reveal reveal--d1">
-          <div class="stage" aria-hidden="true">
-            <span class="stage__index">01</span>
-          </div>
-          <p class="product__phones-caption">Касание NFC или скан QR — клиент сразу на вашей странице</p>
+          <a class="case-frame" href="https://slmcards.ru/velvetflowers" target="_blank" rel="noopener noreferrer">
+            <img src="images/case-velvet.webp" alt="Фасад цветочной мастерской и кофейни Velvet Flowers" width="512" height="288">
+            <span class="case-frame__meta">
+              <span>Живой проект</span>
+              <strong>Velvet Flowers</strong>
+            </span>
+          </a>
+          <p class="product__phones-caption">Касание NFC или скан QR — гость сразу на странице заведения</p>
         </div>
       </div>
     </section>
@@ -182,21 +353,23 @@
         <div class="product__content reveal">
           <p class="eyebrow eyebrow--magenta">Решение 02</p>
           <h2 class="section-title">E-Menu</h2>
-          <p class="product__result">Электронное меню для ресторанов, кафе и баров — больше гостей, выше средний чек, современный сервис без лишних затрат.</p>
-          <p class="section-lead">Гость сканирует QR или касается NFC-метки и видит меню в фирменном стиле. Актуальные цены, фото, навигация — без очередей и устаревших буклетов.</p>
+          <p class="product__result">Гость садится за стол и листает меню в вашем стиле. Буклет не нужен.</p>
           <ul class="feature-list feature-list--magenta">
-            <li>Дизайн под стиль заведения</li>
-            <li>Разделы и категории блюд</li>
-            <li>Мгновенное обновление цен</li>
-            <li>QR на столах и материалах</li>
-            <li>NFC-метка — меню открывается касанием</li>
+            <li>Фото, разделы, актуальные цены</li>
+            <li>QR на столе или касание NFC</li>
+            <li>Блюдо закончилось — страница обновилась</li>
+            <li>Меню можно оставить на экране телефона</li>
           </ul>
           <a href="#connect" class="btn btn--magenta">Заказать E-Menu</a>
         </div>
         <div class="product__demo reveal reveal--d1">
-          <div class="stage stage--violet" aria-hidden="true">
-            <span class="stage__index">02</span>
-          </div>
+          <a class="case-frame" href="https://ais-pre-ucutl3qxlqgfabmq7y43e3-773435659232.europe-west2.run.app/?p=petg7lpjd" target="_blank" rel="noopener noreferrer">
+            <img src="images/case-tesla.webp" alt="Зал Lounge Cafe Tesla" width="900" height="900">
+            <span class="case-frame__meta">
+              <span>Живой проект</span>
+              <strong>Lounge Cafe Tesla</strong>
+            </span>
+          </a>
           <p class="product__phones-caption">QR на столе — меню открывается за секунду</p>
         </div>
       </div>
@@ -207,21 +380,23 @@
         <div class="product__content reveal">
           <p class="eyebrow eyebrow--silver">Решение 03</p>
           <h2 class="section-title">Электронные каталоги</h2>
-          <p class="product__result">Ассортимент, который листают с телефона — для магазинов, шоурумов, брендов и производителей.</p>
-          <p class="section-lead">Покупатель сканирует QR или касается NFC-метки и видит коллекции, цены и описания. Без PDF в переписке и без нового буклета к каждому сезону.</p>
+          <p class="product__result">Покупатель открывает коллекцию у полки. Дома — снова, уже с иконки на экране.</p>
           <ul class="feature-list feature-list--silver">
-            <li>Разделы и карточки товаров</li>
-            <li>Фото, цены, описание</li>
-            <li>Обновление без новой печати</li>
-            <li>QR на витрину, упаковку и раздатку</li>
-            <li>NFC-метка — каталог с одного касания</li>
+            <li>Фото, цены, описания, разделы</li>
+            <li>QR на витрине или касание NFC</li>
+            <li>Сезон меняется без нового буклета</li>
+            <li>Каталог сохраняется на телефон как приложение</li>
           </ul>
           <a href="#connect" class="btn btn--ghost-light">Заказать каталог</a>
         </div>
         <div class="product__demo reveal reveal--d1">
-          <div class="stage stage--copper" aria-hidden="true">
-            <span class="stage__index">03</span>
-          </div>
+          <a class="case-frame" href="https://slmcards.ru/jbpx4w29t" target="_blank" rel="noopener noreferrer">
+            <img src="images/case-caviar.webp" alt="Икра и рыба в каталоге Смайлович" width="900" height="720">
+            <span class="case-frame__meta">
+              <span>Живой проект</span>
+              <strong>Смайлович</strong>
+            </span>
+          </a>
           <p class="product__phones-caption">QR или касание — и каталог уже в руке</p>
         </div>
       </div>
@@ -232,8 +407,7 @@
         <div class="product__content reveal">
           <p class="eyebrow eyebrow--silver">Решение 04</p>
           <h2 class="section-title">Сайты</h2>
-          <p class="product__result">Полноценная цифровая платформа — другой чек, другие задачи, другой масштаб.</p>
-          <p class="section-lead">Корпоративный сайт или лендинг с индивидуальным дизайном, структурой под бизнес-задачи и технической базой уровня серьёзного бренда.</p>
+          <p class="product__result">Когда одной страницы мало и компанию нужно рассказать целиком.</p>
           <ul class="feature-list feature-list--silver">
             <li>Индивидуальный дизайн</li>
             <li>Структура под ваши цели</li>
@@ -243,10 +417,14 @@
           <a href="#connect" class="btn btn--ghost-light">Обсудить сайт</a>
         </div>
         <div class="product__demo reveal reveal--d1">
-          <div class="stage stage--copper" aria-hidden="true">
-            <span class="stage__index">04</span>
-          </div>
-          <p class="product__phones-caption">Сайт, который продаёт и вызывает доверие</p>
+          <a class="case-frame" href="https://krona-studio-mebel.ru/" target="_blank" rel="noopener noreferrer">
+            <img src="images/case-krona-site.webp" alt="Кухня на заказ — сайт мебельной студии КРОНА" width="1200" height="630">
+            <span class="case-frame__meta">
+              <span>Живой проект</span>
+              <strong>КРОНА</strong>
+            </span>
+          </a>
+          <p class="product__phones-caption">Сайт студии: тот же клиент, что и визитка КРОНА</p>
         </div>
       </div>
     </section>
@@ -258,39 +436,24 @@
       <div class="container">
         <div class="benefits__head reveal">
           <p class="eyebrow eyebrow--gold">NFC-метка</p>
-          <h2 class="section-title">Одна метка открывает визитку, меню или каталог</h2>
-          <p class="section-lead">На метку записывается ссылка на нужный продукт. Касание — и он уже на экране. Содержимое страницы можно менять, саму метку заново не выпускают.</p>
+          <h2 class="section-title">Одно касание — и вы уже на экране</h2>
+          <p class="section-lead">На метке ссылка, не весь файл. Страницу можно менять. Метку заново не выпускают. QR остаётся рядом.</p>
         </div>
         <div class="nfc__grid">
           <article class="benefit reveal">
             <span class="benefit__icon" aria-hidden="true">01</span>
             <h3>Одно касание</h3>
-            <p>Телефон сам предлагает открыть страницу. Не нужно ловить QR камерой, ставить приложение или диктовать ссылку.</p>
+            <p>Телефон сам предлагает открыть страницу.</p>
           </article>
           <article class="benefit reveal reveal--d1">
             <span class="benefit__icon" aria-hidden="true">02</span>
             <h3>Три продукта на выбор</h3>
-            <p>На метку записывается электронная визитка, E-Menu или электронный каталог — тот, который нужен в этой точке.</p>
+            <p>На метку — визитка, меню или каталог. Тот, что нужен в этой точке.</p>
           </article>
           <article class="benefit reveal reveal--d2">
             <span class="benefit__icon" aria-hidden="true">03</span>
             <h3>Живое содержимое</h3>
-            <p>Поменялись цены, блюда или ассортимент — обновляется страница. Физическая метка остаётся прежней.</p>
-          </article>
-          <article class="benefit reveal">
-            <span class="benefit__icon" aria-hidden="true">04</span>
-            <h3>Встреча, стол, витрина</h3>
-            <p>На переговорах открывается визитка, на столе — меню, у полки — каталог. Логика одна, продукт разный.</p>
-          </article>
-          <article class="benefit reveal reveal--d1">
-            <span class="benefit__icon" aria-hidden="true">05</span>
-            <h3>Рядом с QR</h3>
-            <p>QR остаётся в визитке, меню и каталоге — для тех, кто привык сканировать. NFC быстрее, когда телефон уже в руке.</p>
-          </article>
-          <article class="benefit reveal reveal--d2">
-            <span class="benefit__icon" aria-hidden="true">06</span>
-            <h3>Гостю ничего не нужно уметь</h3>
-            <p>Никакой настройки на стороне клиента. Поднёс телефон — продукт открыт.</p>
+            <p>Цены, блюда, ассортимент меняются на странице. Метка остаётся.</p>
           </article>
         </div>
       </div>
@@ -301,28 +464,28 @@
       <div class="container">
         <div class="benefits__head reveal">
           <p class="eyebrow eyebrow--cyan">Преимущества</p>
-          <h2 class="section-title">Почему заказывают здесь</h2>
+          <h2 class="section-title">Как это ощущается</h2>
         </div>
         <div class="benefits__grid">
           <article class="benefit reveal">
             <span class="benefit__icon" aria-hidden="true">◆</span>
-            <h3>Маркетинговое мышление</h3>
-            <p>Каждый элемент проектируется с учётом восприятия, доверия и пути клиента к действию.</p>
+            <h3>Вас не ищут в кармане</h3>
+            <p>Контакт остаётся в телефоне сразу после встречи.</p>
           </article>
           <article class="benefit reveal reveal--d1">
             <span class="benefit__icon" aria-hidden="true">◆</span>
-            <h3>Индивидуальный подход</h3>
-            <p>Нет шаблонов «для всех». Проект адаптируется под вашу нишу, аудиторию и задачу.</p>
+            <h3>Это похоже на вас</h3>
+            <p>Страница собирается под ваш бренд, не из чужого шаблона.</p>
           </article>
           <article class="benefit reveal reveal--d2">
             <span class="benefit__icon" aria-hidden="true">◆</span>
-            <h3>Прозрачный процесс</h3>
-            <p>Реальные сроки, понятная стоимость до старта, прямой контакт на каждом этапе.</p>
+            <h3>Сумма известна заранее</h3>
+            <p>Срок и стоимость называю до старта.</p>
           </article>
           <article class="benefit reveal reveal--d3">
             <span class="benefit__icon" aria-hidden="true">◆</span>
-            <h3>Премиальное исполнение</h3>
-            <p>Типографика, логика, детали — на уровне, который ощущается как дорогой продукт.</p>
+            <h3>Я остаюсь рядом</h3>
+            <p>После запуска отвечаю в мессенджере в рабочий день.</p>
           </article>
         </div>
       </div>
@@ -333,7 +496,7 @@
       <div class="container">
         <div class="process__head reveal">
           <p class="eyebrow eyebrow--cyan">Как работает</p>
-          <h2 class="section-title">Понятный путь от обращения до запуска</h2>
+          <h2 class="section-title">От разговора до запуска</h2>
         </div>
         <ol class="process__steps">
           <li class="process__step reveal">
@@ -381,42 +544,51 @@
       </div>
     </section>
 
+    </div>
+    <div class="panel" data-panel="faq" id="panel-faq">
     <!-- 7. FAQ -->
     <section class="section faq" id="faq">
       <div class="container">
         <div class="faq__head reveal">
           <p class="eyebrow eyebrow--cyan">FAQ</p>
-          <h2 class="section-title">Снимаем возражения до обращения</h2>
+          <h2 class="section-title">Частые вопросы</h2>
         </div>
         <div class="faq__list reveal reveal--d1">
           <details class="faq__item">
+            <summary>Можно ли сохранить визитку, меню или каталог на телефон?</summary>
+            <p>Да. Электронную визитку, электронный каталог и электронное меню клиент сохраняет на экран телефона. После этого страница открывается с иконки, как приложение. Устанавливать её из магазина приложений не нужно.</p>
+          </details>
+          <details class="faq__item">
+            <summary>Чем сайт отличается от визитки?</summary>
+            <p>Визитка — имя и контакт. Этот сайт — как я работаю, больше проектов и ответы до заказа.</p>
+          </details>
+          <details class="faq__item">
             <summary>Почему кажется, что это дорого?</summary>
-            <p>Дорого, если сравнивать с пачкой бумаги. Визитку, меню и каталог печатают заново при каждой правке: цена, телефон, сезонное блюдо, новый товар. Здесь стоимость фиксируется до старта и закрывает дизайн, сборку и запуск. Дальше меняется содержимое, а не заказывается тираж.</p>
-            <p>Визитка, меню, каталог и сайт — разные продукты и разные чеки. Цифру называю до начала работы, без доплат «по ходу». Если задача меньше, чем сайт, сайт и не предлагаю.</p>
+            <p>Бумагу печатают заново при каждой правке. Здесь сумма фиксируется до старта: дизайн, сборка, запуск. Дальше меняется страница, не тираж. Цифру называю заранее. Если хватает визитки, сайт не предлагаю.</p>
           </details>
           <details class="faq__item">
             <summary>Что можно записать на NFC-метку?</summary>
-            <p>Электронную визитку, E-Menu или электронный каталог. На метке — ссылка на выбранный продукт: касание, и он открывается. Один и тот же формат метки работает на встрече, на столе и на витрине.</p>
+            <p>Визитку, меню или каталог. На метке ссылка: касание — и страница открыта.</p>
           </details>
           <details class="faq__item">
             <summary>Где есть QR?</summary>
-            <p>В цифровой визитке, в E-Menu и в электронном каталоге. QR нужен там, где удобно сканировать: раздатка, стол, упаковка, витрина. NFC его не отменяет — это второй, более быстрый вход, когда телефон уже в руке.</p>
+            <p>В визитке, меню и каталоге. QR — где удобно сканировать. NFC — когда телефон уже в руке.</p>
           </details>
           <details class="faq__item">
             <summary>Что входит в цифровую визитку?</summary>
-            <p>NFC-метка, QR-код, персональная страница, контакты, соцсети и список услуг. Это один продукт, а не отдельно «карточка» и отдельно «код».</p>
+            <p>Метка, QR, страница с контактами, услугами и мессенджерами. Это один продукт.</p>
           </details>
           <details class="faq__item">
             <summary>Что получает заведение с E-Menu?</summary>
-            <p>Меню в фирменном стиле, которое гость открывает по QR или касанием NFC. Цены и блюда обновляются без печати новых буклетов. Разделы, фото и навигация уже внутри.</p>
+            <p>Меню в стиле заведения: фото, разделы, цены. Открывается по QR или касанием. Печатать заново не нужно.</p>
           </details>
           <details class="faq__item">
             <summary>Кому нужен электронный каталог?</summary>
-            <p>Магазинам, шоурумам, брендам и производителям, которым надо показать ассортимент без PDF и без буклета к каждому сезону. В каталоге — разделы, фото, цены и описания. Открывается по QR или с NFC-метки.</p>
+            <p>Тем, кому нужно показать ассортимент без PDF и без буклета к сезону.</p>
           </details>
           <details class="faq__item">
             <summary>Когда нужен сайт, а когда хватает визитки или каталога?</summary>
-            <p>Визитка — для знакомства и связи. Меню — для зала. Каталог — для ассортимента. Сайт — когда нужно полноценно представить компанию: структура, несколько сценариев, поиск и доверие на дистанции. Формат выбираем на брифе, а не «сайт всем».</p>
+            <p>Визитка — для знакомства. Меню — для зала. Каталог — для полки. Сайт — когда страниц нужно несколько. Формат выбираем на брифе.</p>
           </details>
           <details class="faq__item">
             <summary>Сколько времени занимает проект?</summary>
@@ -424,59 +596,63 @@
           </details>
           <details class="faq__item">
             <summary>Нужны ли технические знания?</summary>
-            <p>Нет. Сборка, QR и запись NFC-метки — на мне. От вас: материалы и согласование. Гостю и клиенту тоже ничего устанавливать не нужно.</p>
+            <p>Нет. Сборка, QR и метка — на мне. От вас материалы и согласование.</p>
           </details>
           <details class="faq__item">
             <summary>Как формируется стоимость?</summary>
-            <p>От типа продукта и объёма: сколько разделов, есть ли фото, нужен ли только QR или ещё и NFC-метки. Расчёт — до старта, через умную визитную карту или после брифа в мессенджере. Скрытых платежей нет.</p>
+            <p>От формата и объёма. Сумму называю до старта. Скрытых платежей нет.</p>
           </details>
           <details class="faq__item">
             <summary>Есть ли примеры?</summary>
-            <p>Да — реальные цифровые визитки по нишам смотрите на странице <a href="examples.html">«Примеры визиток»</a>. Каталоги и меню собираются по той же логике: свой визуальный язык и вход по QR или NFC.</p>
+            <p>Да. Вкладка «Проекты» — живые работы по категориям. Часть ссылок есть и на <a href="https://slmcards.ru/agent-x" target="_blank" rel="noopener noreferrer">визитке</a>.</p>
           </details>
         </div>
       </div>
     </section>
 
+    </div>
+    <div class="panel" data-panel="contact" id="panel-contact">
     <!-- 8. Connect -->
     <section class="section contact connect" id="connect">
       <div class="container connect__inner reveal">
         <p class="eyebrow eyebrow--cyan">Связь</p>
-        <h2 class="section-title">Свяжитесь через умную визитную карту</h2>
-        <p class="section-lead connect__lead">На сайте нет форм и сбора данных — все контакты, мессенджеры и кнопки заказа собраны в живой цифровой визитке.</p>
+        <h2 class="section-title">Сайт и визитка — один контур</h2>
+        <p class="section-lead connect__lead">Напишите так, как удобно вам. Форм на сайте нет.</p>
 
         <div class="connect__panel">
           <div class="connect__card-block">
-            <span class="contact__label">Умная визитная карта</span>
-            <a href="https://weecard.org/Khristina" class="contact__card-link connect__card-link" target="_blank" rel="noopener noreferrer" aria-label="Умная визитная карта — открыть на WeeCard">
+            <span class="contact__label">Визитка</span>
+            <a href="https://slmcards.ru/agent-x" class="contact__card-link connect__card-link" target="_blank" rel="noopener noreferrer" aria-label="Открыть визитку Христины Финогеновой">
               <img src="images/logo.png" alt="" width="436" height="372">
             </a>
-            <p class="connect__hint">Нажмите на логотип — откроется визитка с телефоном, мессенджерами и кнопками заказа.</p>
-            <a href="https://weecard.org/Khristina" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Открыть умную визитную карту</a>
+            <p class="connect__hint">Нажмите на логотип — откроется визитка, с которой начинается знакомство.</p>
+            <a href="https://slmcards.ru/agent-x" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Открыть визитку</a>
           </div>
 
           <div class="connect__safe">
-            <p class="connect__safe-title">Для вашей безопасности</p>
-            <p class="connect__safe-text">Сначала посмотрите, как выглядит и работает реальная визитная карта — без перехода на сторонние формы и без передачи данных через этот сайт.</p>
-            <a href="examples.html" class="btn btn--ghost">Посмотреть работу реальной визитной карты →</a>
+            <p class="connect__safe-title">Сначала посмотрите работу</p>
+            <p class="connect__safe-text">Откройте живые проекты или саму визитку. Данные через этот сайт не передаются — связь идёт напрямую.</p>
+            <a href="#work" class="btn btn--ghost">Смотреть проекты</a>
+            <p class="connect__place">Саратов · ответ в мессенджерах в рабочий день</p>
           </div>
         </div>
 
         <p class="connect__legal">Пользуясь сайтом, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a> и <a href="offer.html">публичной офертой</a>.</p>
       </div>
     </section>
+    </div>
 
   </main>
 
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <span class="logo logo--footer"><img src="images/logo.png" alt="Цифровой Агент Х" width="436" height="372"></span>
+        <a href="#hero" class="logo logo--footer" data-tab="home" aria-label="Цифровой Агент Х"><img class="logo__icon" src="images/logo-icon.png" alt=""><span class="logo__wordline"><img class="logo__word" src="images/logo-word.png" alt="Цифровой агент"><span class="logo__x-spin"><img src="images/logo-x.png" alt="Х"></span></span></a>
         <p>Премиальные digital-решения для бизнеса</p>
       </div>
       <nav class="footer__nav" aria-label="Футер">
         <a href="#card">Визитки</a>
-        <a href="examples.html">Примеры визиток</a>
+        <a href="#work">Проекты</a>
         <a href="#emenu">E-Menu</a>
         <a href="#catalog">Каталоги</a>
         <a href="#nfc">NFC</a>
@@ -490,6 +666,6 @@
   </footer>
 
   <script src="border-glow.js" defer></script>
-  <script src="script.js" defer></script>
+  <script src="script.js?v=20261126a" defer></script>
 </body>
 </html>
