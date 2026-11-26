@@ -187,7 +187,7 @@
     const scenes = {
       card: {
         nowImg: 'images/play-card-now.webp',
-        fixImg: 'images/play-card-fix.webp',
+        fixImg: 'images/play-card-fix.webp?v=20261126f',
         href: '#card',
         more: 'Смотреть визитки',
         now: {
