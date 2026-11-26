@@ -2642,6 +2642,8 @@ main, .header, .footer { position: relative; z-index: 1; }
   padding: 12%;
 }
 
+.case--logo-full .case__media img { padding: 2%; }
+
 .case--portrait .case__media img { object-position: center 18%; }
 
 .case__body {
