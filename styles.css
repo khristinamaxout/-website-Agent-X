@@ -503,16 +503,23 @@ main, .header, .footer { position: relative; z-index: 1; }
   text-align: left;
   padding: 22px 20px 24px;
   border-radius: 24px;
-  border: 1px solid rgba(232, 196, 176, 0.18);
+  border: 1.5px solid rgba(228, 183, 164, 0.78);
   background: rgba(16, 14, 22, 0.72);
   color: var(--text);
   font: inherit;
   cursor: pointer;
-  transition: border-color 0.35s, background 0.35s;
+  box-shadow: 0 0 0 1px rgba(228, 183, 164, 0.16), 0 0 24px rgba(228, 183, 164, 0.12);
+  transition: border-color 0.35s, background 0.35s, box-shadow 0.35s;
 }
-.play__role:hover { border-color: rgba(228, 183, 164, 0.55); }
+.play__role:hover,
+.play__role:focus-visible {
+  border-color: #f0d2c4;
+  box-shadow: 0 0 0 1px rgba(240, 210, 196, 0.35), 0 0 28px rgba(228, 183, 164, 0.28);
+  outline: none;
+}
 .play__role.is-on {
   border-color: transparent;
+  box-shadow: none;
   background: linear-gradient(180deg, #f0d2c4 0%, #e4b7a4 100%);
   color: #1a120e;
 }
